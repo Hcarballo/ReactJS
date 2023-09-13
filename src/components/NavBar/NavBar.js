@@ -1,7 +1,6 @@
 import CartWidget from "../CartWidget/CartWidget";
 import Favicon from "./assests/img/favicon.png";
-import "bulma/css/bulma.css";
-import "bootstrap/dist/css/bootstrap.min.css"
+
 
 const NavBar = () => {
     return (
