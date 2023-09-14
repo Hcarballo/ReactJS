@@ -4,6 +4,7 @@ import Favicon from "./assests/img/favicon.png";
 
 const NavBar = () => {
     return (
+      <div>
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
   <div className="container-fluid">
   <img src={Favicon} alt="favicon" />
@@ -28,7 +29,11 @@ const NavBar = () => {
       </ul>
     </div>
   </div>
+  <CartWidget/>
 </nav>
+
+</div>
+
        
     );
 }
