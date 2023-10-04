@@ -1,0 +1,23 @@
+/*----General----*/
+body {
+  background-image: url(../src/components/Index/assets/img/Background_princ.webp);
+  background-position: center;
+  background-size: cover;
+  height: 1200px;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+a {
+  color: aliceblue;
+}
+
+footer{
+  text-align: end;
+}
+
+
+

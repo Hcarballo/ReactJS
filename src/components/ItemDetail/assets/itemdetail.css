@@ -1,0 +1,14 @@
+.CardItem{
+    background-color: rgba(62, 4, 4, 0.537);
+    width: 30%;
+    margin: 1%;
+    padding: 10px;
+    border-radius: 5%;
+    text-align: center;
+}
+
+.CardItem img{
+    border-radius: 2%;
+    width: 50%;
+    height: 70%;
+}
