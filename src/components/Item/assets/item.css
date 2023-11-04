@@ -1,3 +1,23 @@
-.ItemFooter{
+.Item{
+    background-color: rgba(62, 4, 4, 0.537);
+    width: 15%;
+    margin: 1%;
+    padding: 10px;
+    border-radius: 5%;
     text-align: center;
+}
+
+.ItemInfo{
+    margin-bottom: 0px;
+}
+
+.ItemFooter{
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.Item img{
+    border-radius: 2%;
+    width: 40%;
+    height: 7rem;
 }

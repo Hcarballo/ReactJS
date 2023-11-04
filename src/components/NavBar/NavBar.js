@@ -18,13 +18,13 @@ const NavBar = () => {
               <NavLink to={`/`} className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}>Inicio</NavLink>             
             </li>
             <li className="nav-item">
-            <NavLink to={`/categoria/tinto`} className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}>Tintos</NavLink>  
+            <NavLink to={`/categoria/Malbec`} className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}>Malbec</NavLink>  
               </li>
             <li className="nav-item">
-            <NavLink to={`/categoria/blanco`} className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}>Blancos</NavLink>  
+            <NavLink to={`/categoria/Blanco`} className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}>Blancos</NavLink>  
             </li>
             <li className="nav-item">
-            <NavLink to={`/categoria/espumante`} className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}>Espumantes</NavLink>  
+            <NavLink to={`/categoria/Espumante`} className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}>Espumantes</NavLink>  
             </li>
           </ul>
         </div>
