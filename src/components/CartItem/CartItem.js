@@ -7,8 +7,8 @@ const CartItem = ({ id, producto, precio, cantidad, subtotal }) => {
     const { removerItem } = useContext(CartContext);
 
     return (
-        <tr className="filas" key={id}>
-            <th scope="row">{id}</th>
+        <tr className="filas">
+            <th scope="row" key={id}>{id}</th>
             <th>{producto}</th>
             <th>${precio.toFixed(1)}</th>
             <th>{cantidad}</th>
