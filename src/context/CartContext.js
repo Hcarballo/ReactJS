@@ -5,18 +5,20 @@ export const CartContext = createContext({
 })
 
 export const CartProvider = ({ children }) => {
-    const [cart, setCart] = useState([])
+    const [cart, setCart] = useState([]);
     let [total, setTotal] = useState(0);
+    let [cantidadTotal, setcantotal] = useState(0);
 
     const addItem = (item, cantidad) => {
 
         const subtotal = item.precio * cantidad;
 
         if (!isInCart(item.id)) {
-
             total = total + subtotal;
-            setTotal(total)
-            setCart(prod => [...prod, { ...item, cantidad, subtotal }])
+            cantidadTotal = cantidadTotal + cantidad;
+            setcantotal(cantidadTotal);
+            setTotal(total);            
+            setCart(p => [...p, { ...item, cantidad, subtotal }])
 
         } else {
             console.error('El producto ya fue agregado')
@@ -24,8 +26,9 @@ export const CartProvider = ({ children }) => {
     }
 
     const removerItem = (itemId) => {        
-        const {subtotal} = cart.find(p => p.id === itemId)
+        const {subtotal,cantidad} = cart.find(p => p.id === itemId)
         setTotal(total - subtotal)
+        setcantotal(cantidadTotal - cantidad);
         const cartUpdate = cart.filter(prod => prod.id !== itemId)
         setCart(cartUpdate)
     }
@@ -40,7 +43,7 @@ export const CartProvider = ({ children }) => {
     }
 
     return (
-        <CartContext.Provider value={{ cart, addItem, removerItem, clearCart, isInCart, total }}>
+        <CartContext.Provider value={{ cart, addItem, removerItem, clearCart, isInCart, total, cantidadTotal }}>
             {children}
         </CartContext.Provider>
     )

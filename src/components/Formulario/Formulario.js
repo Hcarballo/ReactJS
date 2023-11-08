@@ -14,12 +14,11 @@ const Formulario = ({ onConfirm }) => {
         const userData = {
             nombre, telefono, dni, email
         }
-
         onConfirm(userData)
     }
 
     return (
-        <div>
+        <div className="formulario">
             <form onSubmit={handleConfirm} className="Form">
                 <label className="label">Nombre
                     <input className="input" type="text" value={nombre} onChange={({ target }) => setNombre(target.value)} />

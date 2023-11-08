@@ -5,21 +5,22 @@ import carro from "./assets/img/carro.svg";
 
 
 const CartWidget = () => {
-    const { cart } = useContext(CartContext);
-
+   
+    const { cantidadTotal } = useContext(CartContext);
+    
     return (
-        cart.map((p) => (
-            <Link to='/cart' className="CartWidget" style={{ display: p.cantidad > 0 ? 'block' : 'none' }} >
-                <div className="carro_section">
-                    <div>
-                        <img src={carro} alt="Carro_img" />
-                    </div>
-                    <div>
-                        {p.cantidad}
-                    </div>
+
+        <Link to='/cart' className="CartWidget" style={{ display: cantidadTotal > 0 ? 'block' : 'none' }} >
+            <div className="carro_section">
+                <div>
+                    <img src={carro} alt="Carro_img" />
                 </div>
-            </Link>
-        )));
+                <div>
+                    {cantidadTotal}
+                </div>
+            </div>
+        </Link>
+    );
 }
 
 export default CartWidget;

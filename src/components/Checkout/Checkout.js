@@ -4,11 +4,9 @@ import { Timestamp, addDoc, collection, documentId, getDocs, query, where, write
 import { dbmorewine } from '../../services/firebase/firebaseConfig';
 import Formulario from "../Formulario/Formulario";
 
-
-
 const Checkout = () => {
 
-    const [loading, setloading] = useState([false]);
+    const [loading, setloading] = useState(false);
     const [ordenId, setOrdenId] = useState('');
 
     const { cart, total, clearCart } = useContext(CartContext);
@@ -18,7 +16,7 @@ const Checkout = () => {
 
         try {
             const Orden = {
-                buyer: {
+                comprador: {
                     nombre, telefono, dni, email
                 },
                 items: cart,
@@ -50,7 +48,8 @@ const Checkout = () => {
             if (outOfStock.length === 0) {
                 await batch.commit()
 
-                const ordenRef = collection(dbmorewine, 'orders')
+                const ordenRef = collection(dbmorewine, 'Ordenes')
+
                 const ordenAdded = await addDoc(ordenRef, Orden)
 
                 setOrdenId(ordenAdded.id)
@@ -64,6 +63,7 @@ const Checkout = () => {
             setloading(false)
         }
     }
+
 
     if (loading) {
         return <h1>Se esta generando su orden...</h1>
