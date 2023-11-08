@@ -1,4 +1,5 @@
 import { useState } from "react"
+import "../Formulario/assest/formulario.css"
 
 
 
@@ -19,21 +20,22 @@ const Formulario = ({ onConfirm }) => {
 
     return (
         <div className="formulario">
-            <form onSubmit={handleConfirm} className="Form">
-                <label className="label">Nombre
-                    <input className="input" type="text" value={nombre} onChange={({ target }) => setNombre(target.value)} />
-                </label>
-                <label className="label">Telefono
-                    <input className="input" type="text" value={telefono} onChange={({ target }) => setTelefono(target.value)} />
-                </label>
-                <label className="label">DNI
-                    <input className="input" type="text" value={dni} onChange={({ target }) => setDni(target.value)} />
-                </label>
-                <label className="label">Email
-                    <input className="input" type="email" value={email} onChange={({ target }) => setEmail(target.value)} />
-                </label>
-                <div className="label">
-                    <button type="submit" className="Button">Crear Orden</button>
+            <form onSubmit={handleConfirm} className="form">
+                <div className="mb-3">                
+                    <input className="form-control" type="text" placeholder="Nombre" aria-label="default input example" value={nombre} onChange={({ target }) => setNombre(target.value)} />                
+                </div>
+                <div className="mb-3">                
+                    <input className="form-control" type="text" placeholder="Telefono" aria-label="default input example" value={telefono} onChange={({ target }) => setTelefono(target.value)} />
+                </div>
+                <div className="mb-3">                
+                    <input className="form-control" type="text" placeholder="DNI" aria-label="default input example" value={dni} onChange={({ target }) => setDni(target.value)} />
+                </div>
+                <div className="mb-3">                    
+                    <input type="email" className="form-control" value={email} id="exampleFormControlInput1" placeholder="name@example.com"
+                    onChange={({target})=>setEmail(target.value)} />
+                </div>
+                <div className="mb-3">
+                    <button type="submit" className="btn btn-primary">Crear Orden</button>
                 </div>
             </form>
         </div>

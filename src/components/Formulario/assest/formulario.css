@@ -1,0 +1,11 @@
+.formulario{
+    background-color: rgba(62, 4, 4, 0.537);
+    border-radius: 2px;
+    width: 50%;
+}
+
+.form{
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}

@@ -1,5 +1,5 @@
-import './assets/itemdetail.css'
-import "bootstrap/dist/css/bootstrap.min.css"
+import './assets/itemdetail.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
@@ -48,12 +48,12 @@ const ItemDetail = ({ id, producto, precio, imagen, categoria, stock, bodega, de
             <footer className='ItemDetailFooter'>                
                 {
                     cantAgregada > 0 ? (
-                        <Link to='/cart' className='Option'>Terminar Compra</Link>
+                        <Link to='/cart' className='btn btn-danger btn-a'>Terminar Compra</Link>
                     ) : (
                         <ItemCount initial={0} stock={stock} onAdd={handleOnAdd} />
                     )
                 }
-                <Link to={`/`} className='Option'>Volver</Link>
+                <Link to={`/`} className='btn btn-secondary btn-b'>Volver</Link>
             </footer>
         </article>
     )

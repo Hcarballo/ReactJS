@@ -3,6 +3,7 @@ import { CartContext } from "../../context/CartContext";
 import { Timestamp, addDoc, collection, documentId, getDocs, query, where, writeBatch } from "firebase/firestore";
 import { dbmorewine } from '../../services/firebase/firebaseConfig';
 import Formulario from "../Formulario/Formulario";
+import "../Checkout/assets/checkout.css"
 
 const Checkout = () => {
 
@@ -44,7 +45,7 @@ const Checkout = () => {
                     outOfStock.push({ id: doc.id, ...dataDoc })
                 }
             })
-
+debugger
             if (outOfStock.length === 0) {
                 await batch.commit()
 
@@ -74,7 +75,7 @@ const Checkout = () => {
     }
 
     return (
-        <div>
+        <div className="checkout">
             <h1>Checkout</h1>
             <Formulario onConfirm={crearOrden} />
         </div>
