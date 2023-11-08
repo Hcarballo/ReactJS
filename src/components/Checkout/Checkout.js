@@ -45,7 +45,7 @@ const Checkout = () => {
                     outOfStock.push({ id: doc.id, ...dataDoc })
                 }
             })
-debugger
+            
             if (outOfStock.length === 0) {
                 await batch.commit()
 
