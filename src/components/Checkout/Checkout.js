@@ -37,7 +37,7 @@ const Checkout = () => {
                 const stockDb = dataDoc.stock
 
                 const productAdaptedtoCart = cart.find(prod => prod.id === doc.id)
-                const prodCantidad = productAdaptedtoCart?.prodCantidad
+                const prodCantidad = productAdaptedtoCart?.cantidad
 
                 if (stockDb >= prodCantidad) {
                     batch.update(doc.ref, { stock: stockDb - prodCantidad })
@@ -64,7 +64,6 @@ const Checkout = () => {
             setloading(false)
         }
     }
-
 
     if (loading) {
         return <h1>Se esta generando su orden...</h1>
